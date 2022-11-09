@@ -49,6 +49,11 @@ For some other models, in `model_avg.py` we use the average combination of some 
 ```
 python model_avg.py --stage train --model_name avg_gb_brf_2
 ```
+
+In `model_pca.py` we use the PCA combination of some clustered features. You can run the code, e.g.
+```
+python model_pca.py --stage train --model_name pca_gb_brf_2
+```
 Since the outcome is not good, we don't provide the test stage to generate the submission csv.
 
 
