@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alpenda - Corporate Risk Insights</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon">
+                    <!-- <i class="fas fa-cube"></i> -->
+                    <img src="img/imagesmall2.png" width="60">
+                </div>
+                <div class="sidebar-brand-text mx-3">Alpenda</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-database"></i>
+                    <!-- <i class="fa-thin fa-user"></i> -->
+                    <!-- <i class="fa-brands fa-fly"></i> -->
+                    <!-- <i class="fa-solid fa-user"></i> -->
+                    <span>Model training</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="currentModel.html">
+                    <i class="fas fa-fw fa-clock"></i>
+                    <!-- <i class="fa-thin fa-user"></i> -->
+                    <!-- <i class="fa-brands fa-fly"></i> -->
+                    <!-- <i class="fa-solid fa-user"></i> -->
+                    <span>Current model</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="modelApp.html">
+                    <i class="fas fa-fw fa-paper-plane"></i>
+                    <!-- <i class="fa-thin fa-user"></i> -->
+                    <!-- <i class="fa-brands fa-fly"></i> -->
+                    <!-- <i class="fa-solid fa-user"></i> -->
+                    <span>Model application</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="riskAnalysis.html">
+                    <i class="fas fa-fw fa-exclamation-triangle"></i>
+                    
+                    <span>Risk Analysis</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Language -->
+                        <li class="nav-item no-arrow mx-1">
+                            <a class="nav-link" href="#" role="button">
+                                <img src="img/de.png" />
+                            </a>
+                        </li>
+
+                        <li class="nav-item no-arrow mx-1">
+                            <a class="nav-link" href="#" role="button">
+                                <img src="img/fr.png" />
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">1</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">21-07-2022</div>
+                                        <span class="font-weight-bold">You are now at high operational risk!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">UCS</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Total Applicants
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">11,325</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Annual) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Total Loan
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$ 500M</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tasks Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Long-term Loan
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">69.8%</div>
+                                                </div>
+                                                <div class="col">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Short-term Loan
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">30.2%</div>
+                                                </div>
+                                                <div class="col">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">
+                            Overall Credit Metrics
+                        </h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <div class="col-lg-8 mb-4">
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Current Lending Risk</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Column -->
+                        <div class="col-lg-4 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Highlight Feature</h6>
+                                </div>
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V11
+                                        </a>
+                                        <span class="float-right">🟧 1.32%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V137
+                                        </a>
+                                        <span class="float-right">🟧 0.82%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V973
+                                        </a>
+                                        <span class="float-right">⬛️ 1.03%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V768
+                                        </a>
+                                        <span class="float-right">🟧 0.90%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V569
+                                        </a>
+                                        <span class="float-right">🟧 0.65%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V226
+                                        </a>
+                                        <span class="float-right">⬛️ 0.53%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V330
+                                        </a>
+                                        <span class="float-right">🟧 0.41%</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a class="news-item-title" href="#">
+                                            V185
+                                        </a>
+                                        <span class="float-right">🟧 0.22%</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Current Total Feature Importance</h6>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div id="container" style="height: 400%"></div>
+                                                <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+                                                <script type="text/javascript">
+                                                    var dom = document.getElementById('container');
+                                                    var myChart = echarts.init(dom, null, {
+                                                        renderer: 'canvas',
+                                                        useDirtyRect: false
+                                                    });
+                                                    var app = {};
+
+                                                    var option;
+
+                                                    // prettier-ignore
+                                                    let dataAxis = ['v940	', 'v125	', 'v569	', 'v277	', 'v183	', 'v583	', 'v969	', 'v086	', 'v724	', 'v833	', 'v411	', 'v786	', 'v457	', 'v418	', 'v377	', 'v861	', 'v704	', 'v445	', 'v428	', 'v519	', 'v062	', 'v331	', 'v619	', 'v966	', 'v329	', 'v203	', 'v121	', 'v260	', 'v324	', 'v221	', 'v751	', 'v560	', 'v787	', 'v495	', 'v883	', 'v178	', 'v808	', 'v153	', 'v739	', 'v599	', 'v689	', 'v967	', 'v698	', 'v211	', 'v185	', 'v105	', 'v908	', 'v938	', 'v943	', 'v188	', 'v462	', 'v317	', 'v339	', 'v079	', 'v169	', 'v903	', 'v798	', 'v773	', 'v356	', 'v127	', 'v279	', 'v948	', 'v543	', 'v234	', 'v117	', 'v361	', 'v763	', 'v914	', 'v069	', 'v951	', 'v284	', 'v917	', 'v957	', 'v596	', 'v496	', 'v239	', 'v330	', 'v090	', 'v451	', 'v337	', 'v548	', 'v539	', 'v226	', 'v615	', 'v904	', 'v586	', 'v802	', 'v417	', 'v434	', 'v811	', 'v326	', 'v425	', 'v414	', 'v796	', 'v792	', 'v222	', 'v960	', 'v900	', 'v469	', 'v767	', 'v722	', 'v430	', 'v131	', 'v777	', 'v629	', 'v928	', 'v177	', 'v713	', 'v162	', 'v570	', 'v658	', 'v302	', 'v860	', 'v073	', 'v316	', 'v568	', 'v864	', 'v122	', 'v952	', 'v422	', 'v261	', 'v946	', 'v637	', 'v784	', 'v611	', 'v435	', 'v064	', 'v089	', 'v163	', 'v070	', 'v258	', 'v854	', 'v836	', 'v018	', 'v838	', 'v245	', 'v834	', 'v387	', 'v546	', 'v208	', 'v720	', 'v636	', 'v272	', 'v881	', 'v225	', 'v154	', 'v927	', 'v288	', 'v464	', 'v111	', 'v608	', 'v902	', 'v750	', 'v412	', 'v514	', 'v675	', 'v041	', 'v332	', 'v979	', 'v391	', 'v112	', 'v026	', 'v815	', 'v622	', 'v670	', 'v575	', 'v204	', 'v083	', 'v591	', 'v602	', 'v061	', 'v400	', 'v029	', 'v378	', 'v319	', 'v623	', 'v352	', 'v250	', 'v673	', 'v467	', 'v831	', 'v035	', 'v307	', 'v088	', 'v830	', 'v542	', 'v880	', 'v476	', 'v886	', 'v439	', 'v620	', 'v585	', 'v201	', 'v193	', 'v848	', 'v171	', 'v665	', 'v996	', 'v170	', 'v402	', 'v764	', 'v898	', 'v108	', 'v772	', 'v984	', 'v895	', 'v746	', 'v438	', 'v423	', 'v730	', 'v393	', 'v737	', 'v963	', 'v756	', 'v915	', 'v192	', 'v650	', 'v667	', 'v290	', 'v106	', 'v594	', 'v283	', 'v360	', 'v365	', 'v408	', 'v625	', 'v227	', 'v380	', 'v606	', 'v731	', 'v076	', 'v441	', 'v202	', 'v693	', 'v118	', 'v674	', 'v072	', 'v613	', 'v103	', 'v091	', 'v338	', 'v716	', 'v020	', 'v340	', 'v874	', 'v524	', 'v712	', 'v181	', 'v719	', 'v116	', 'v455	', 'v624	', 'v358	', 'v659	', 'v521	', 'v545	', 'v119	', 'v006	', 'v477	', 'v173	', 'v752	', 'v489	', 'v406	', 'v480	', 'v470	', 'v981	', 'v941	', 'v934	', 'v701	', 'v846	', 'v933	', 'v855	', 'v522	', 'v349	', 'v485	', 'v318	', 'v797	', 'v936	', 'v523	', 'v055	', 'v755	', 'v420	', 'v098	', 'v300	', 'v094	', 'v873	', 'v015	', 'v832	', 'v487	', 'v231	', 'v429	', 'v325	', 'v144	', 'v911	', 'v341	', 'v050	', 'v824	', 'v398	', 'v506	', 'v461	', 'v471	', 'v446	', 'v991	', 'v990	', 'v266	', 'v666	', 'v269	', 'v433	', 'v638	', 'v138	', 'v149	', 'v008	', 'v385	', 'v779	', 'v695	', 'v023	', 'v571	', 'v233	', 'v351	', 'v223	', 'v683	', 'v655	', 'v085	', 'v168	', 'v057	', 'v635	', 'v027	', 'v059	', 'v483	', 'v198	', 'v745	', 'v878	', 'v253	', 'v263	', 'v955	', 'v314	', 'v690	', 'v950	', 'v459	', 'v297	', 'v038	', 'v533	', 'v270	', 'v058	', 'v573	', 'v512	', 'v717	', 'v416	', 'v743	', 'v566	', 'v289	', 'v761	', 'v556	', 'v544	', 'v774	', 'v771	', 'v199	', 'v778	', 'v407	', 'v003	', 'v879	', 'v229	', 'v702	', 'v014	', 'v721	', 'v691	', 'v656	', 'v839	', 'v252	', 'v788	', 'v299	', 'v649	', 'v501	', 'v541	', 'v249	', 'v841	', 'v869	', 'v220	', 'v681	', 'v021	', 'v791	', 'v205	', 'v893	', 'v882	', 'v845	', 'v607	', 'v366	', 'v218	', 'v921	', 'v275	', 'v744	', 'v945	', 'v939	', 'v603	', 'v643	', 'v242	', 'v677	', 'v474	', 'v711	', 'v376	', 'v651	', 'v345	', 'v723	', 'v664	', 'v472	', 'v605	', 'v821	', 'v348	', 'v547	', 'v256	', 'v754	', 'v889	', 'v206	', 'v905	', 'v313	', 'v155	', 'v499	', 'v164	', 'v244	', 'v440	', 'v783	', 'v364	', 'v847	', 'v240	', 'v068	', 'v132	', 'v913	', 'v555	', 'v354	', 'v032	', 'v442	', 'v175	', 'v490	', 'v733	', 'v858	', 'v949	', 'v810	', 'v924	', 'v028	', 'v561	', 'v172	', 'v159	', 'v432	', 'v281	', 'v671	', 'v688	', 'v392	', 'v333	', 'v968	', 'v362	', 'v176	', 'v628	', 'v601	', 'v097	', 'v978	', 'v493	', 'v396	', 'v593	', 'v274	', 'v540	', 'v115	', 'v004	', 'v463	', 'v564	', 'v964	', 'v046	', 'v143	', 'v862	', 'v574	', 'v312	', 'v401	', 'v395	', 'v510	', 'v565	', 'v550	', 'v497	', 'v454	', 'v078	', 'v532	', 'v335	', 'v287	', 'v301	', 'v109	', 'v087	', 'v912	', 'v268	', 'v158	', 'v747	', 'v114	', 'v526	', 'v513	', 'v588	', 'v180	', 'v559	', 'v371	', 'v872	', 'v734	', 'v397	', 'v156	', 'v081	', 'v197	', 'v399	', 'v901	', 'v150	', 'v007	', 'v147	', 'v102	', 'v818	', 'v413	', 'v017	', 'v995	', 'v977	', 'v409	', 'v110	', 'v049	', 'v009	', 'v210	', 'v342	', 'v699	', 'v618	', 'v241	', 'v246	', 'v146	', 'v488	', 'v022	', 'v373	', 'v096	', 'v075	', 'v582	', 'v311	', 'v648	', 'v254	', 'v095	', 'v749	', 'v036	', 'v518	', 'v885	', 'v010	', 'v530	', 'v502	', 'v896	', 'v553	', 'v632	', 'v039	', 'v135	', 'v529	', 'v120	', 'v305	', 'v891	', 'v837	', 'v129	', 'v617	', 'v954	', 'v640	', 'v653	', 'v770	', 'v760	', 'v336	', 'v344	', 'v271	', 'v918	', 'v851	', 'v478	', 'v805	', 'v303	', 'v509	', 'v379	', 'v494	', 'v728	', 'v740	', 'v037	', 'v053	', 'v715	', 'v280	', 'v294	', 'v925	', 'v273	', 'v657	', 'v052	', 'v219	', 'v769	', 'v700	', 'v813	', 'v527	', 'v840	', 'v892	', 'v453	', 'v865	', 'v697	', 'v579	', 'v790	', 'v410	', 'v123	', 'v639	', 'v322	', 'v394	', 'v447	', 'v642	', 'v137	', 'v350	', 'v456	', 'v232	', 'v243	', 'v793	', 'v357	', 'v645	', 'v306	', 'v578	', 'v856	', 'v660	', 'v498	', 'v182	', 'v980	', 'v929	', 'v384	', 'v536	', 'v491	', 'v386	', 'v100	', 'v634	', 'v758	', 'v309	', 'v466	', 'v080	', 'v842	', 'v644	', 'v134	', 'v567	', 'v652	', 'v042	', 'v353	', 'v347	', 'v124	', 'v646	', 'v363	', 'v048	', 'v405	', 'v421	', 'v334	', 'v870	', 'v971	', 'v375	', 'v389	', 'v727	', 'v535	', 'v997	', 'v907	', 'v482	', 'v104	', 'v390	', 'v152	', 'v276	', 'v910	', 'v897	', 'v780	', 'v922	', 'v852	', 'v768	', 'v829	', 'v738	', 'v563	', 'v976	', 'v084	', 'v809	', 'v437	', 'v323	', 'v820	', 'v985	', 'v742	', 'v850	', 'v888	', 'v935	', 'v876	', 'v684	', 'v128	', 'v630	', 'v212	', 'v388	', 'v157	', 'v320	', 'v803	', 'v725	', 'v265	', 'v920	', 'v766	', 'v372	', 'v286	', 'v436	', 'v077	', 'v504	', 'v616	', 'v919	', 'v557	', 'v045	', 'v040	', 'v492	', 'v500	', 'v680	', 'v577	', 'v956	', 'v687	', 'v868	', 'v043	', 'v145	', 'v600	', 'v799	', 'v216	', 'v849	', 'v741	', 'v328	', 'v853	', 'v663	', 'v962	', 'v610	', 'v011	', 'v074	', 'v826	', 'v678	', 'v959	', 'v200	', 'v884	', 'v517	', 'v992	', 'v812	', 'v726	', 'v448	', 'v661	', 'v794	', 'v186	', 'v795	', 'v572	', 'v291	', 'v534	', 'v166	', 'v612	', 'v827	', 'v427	', 'v926	', 'v140	', 'v867	', 'v370	', 'v174	', 'v511	', 'v937	', 'v207	', 'v685	', 'v047	', 'v298	', 'v676	', 'v030	', 'v999	', 'v714	', 'v614	', 'v141	', 'v789	', 'v259	', 'v975	', 'v641	', 'v113	', 'v310	', 'v987	', 'v686	', 'v383	', 'v537	', 'v187	', 'v592	', 'v705	', 'v562	', 'v033	', 'v473	', 'v264	', 'v195	', 'v988	', 'v382	', 'v551	', 'v621	', 'v814	', 'v071	', 'v167	', 'v970	', 'v082	', 'v631	', 'v228	', 'v765	', 'v139	', 'v458	', 'v706	', 'v355	', 'v484	', 'v160	', 'v381	', 'v931	', 'v909	', 'v828	', 'v944	', 'v972	', 'v735	', 'v321	', 'v982	', 'v800	', 'v953	', 'v549	', 'v590	', 'v871	', 'v753	', 'v525	', 'v844	', 'v835	', 'v282	', 'v296	', 'v285	', 'v998	', 'v589	', 'v584	', 'v209	', 'v894	', 'v056	', 'v576	', 'v190	', 'v515	', 'v278	', 'v707	', 'v000	', 'v597	', 'v255	', 'v486	', 'v708	', 'v662	', 'v327	', 'v866	', 'v024	', 'v692	', 'v823	', 'v308	', 'v552	', 'v669	', 'v025	', 'v468	', 'v942	', 'v369	', 'v267	', 'v961	', 'v248	', 'v580	', 'v986	', 'v877	', 'v060	', 'v528	', 'v133	', 'v130	', 'v696	', 'v044	', 'v262	', 'v598	', 'v093	', 'v292	', 'v875	', 'v012	', 'v627	', 'v452	', 'v092	', 'v679	', 'v816	', 'v184	', 'v654	', 'v859	', 'v179	', 'v507	', 'v759	', 'v554	', 'v531	', 'v189	', 'v481	', 'v558	', 'v505	', 'v776	', 'v887	', 'v863	', 'v063	', 'v403	', 'v315	', 'v974	', 'v151	', 'v101	', 'v807	', 'v450	', 'v604	', 'v993	', 'v126	', 'v431	', 'v343	', 'v899	', 'v843	', 'v709	', 'v214	', 'v196	', 'v215	', 'v002	', 'v359	', 'v161	', 'v595	', 'v633	', 'v801	', 'v958	', 'v906	', 'v682	', 'v099	', 'v732	', 'v257	', 'v626	', 'v237	', 'v804	', 'v419	', 'v508	', 'v066	', 'v672	', 'v191	', 'v965	', 'v013	', 'v235	', 'v947	', 'v404	', 'v694	', 'v107	', 'v424	', 'v538	', 'v443	', 'v426	', 'v444	', 'v224	', 'v748	', 'v247	', 'v295	', 'v703	', 'v587	', 'v520	', 'v806	', 'v054	', 'v479	', 'v031	', 'v346	', 'v668	', 'v736	', 'v932	', 'v460	', 'v136	', 'v989	', 'v822	', 'v449	', 'v142	', 'v065	', 'v238	', 'v194	', 'v368	', 'v251	', 'v757	', 'v475	', 'v817	', 'v516	', 'v983	', 'v165	', 'v729	', 'v019	', 'v825	', 'v647	', 'v923	', 'v051	', 'v503	', 'v609	', 'v781	', 'v785	', 'v374	', 'v016	', 'v293	', 'v213	', 'v581	', 'v762	', 'v465	', 'v236	', 'v710	', 'v148	', 'v415	', 'v367	', 'v857	', 'v001	', 'v973	', 'v034	', 'v819	', 'v916	', 'v994	', 'v005	', 'v230	', 'v782	', 'v890	', 'v930	', 'v217	', 'v718	', 'v304	', 'v067	', 'v775'];
+                                                    // prettier-ignore
+                                                    let data = [1.27197, 0.7250797, 0.7214139, 0.6402513, 0.6321853, 0.5712319, 0.5434411, 0.3836171, 0.3490767, 0.3412329, 0.3394626, 0.3373567, 0.3275603, 0.3204294, 0.314536, 0.3093883, 0.3036747, 0.3009376, 0.3004664, 0.2992124, 0.2990562, 0.2980041, 0.2967193, 0.2961309, 0.2948547, 0.2948323, 0.2938621, 0.2913, 0.2906556, 0.2898119, 0.2883141, 0.2871859, 0.287009, 0.2860803, 0.2837833, 0.2809739, 0.2707315, 0.2691001, 0.2688326, 0.2664577, 0.2648768, 0.2636884, 0.2632813, 0.2611901, 0.2601774, 0.259713, 0.2595735, 0.2570934, 0.256374, 0.2546786, 0.2535238, 0.2521448, 0.2519067, 0.250531, 0.2502241, 0.2501958, 0.2498697, 0.2497372, 0.2489346, 0.2484365, 0.2468555, 0.2464966, 0.2459048, 0.2450951, 0.2440795, 0.2438034, 0.2437049, 0.2431764, 0.243115, 0.2429049, 0.2426024, 0.2424382, 0.2419413, 0.2418848, 0.2417486, 0.2417296, 0.241057, 0.2402042, 0.2391244, 0.2390633, 0.2384101, 0.2384056, 0.2381816, 0.2379844, 0.2373862, 0.2371694, 0.2370133, 0.2365819, 0.235929, 0.2352612, 0.2349585, 0.2347939, 0.2347532, 0.2338935, 0.2333221, 0.233276, 0.2326468, 0.2325984, 0.2321372, 0.2307677, 0.2306241, 0.2306132, 0.230071, 0.2297656, 0.2297236, 0.2296815, 0.2296013, 0.2294469, 0.2287167, 0.2280851, 0.2277532, 0.2268292, 0.2268184, 0.2265955, 0.2263412, 0.2261232, 0.2254432, 0.2252439, 0.224793, 0.2244726, 0.2242542, 0.2241224, 0.2236603, 0.2236486, 0.2221266, 0.2214301, 0.2213804, 0.2212005, 0.220452, 0.2195521, 0.2193168, 0.2189517, 0.2181248, 0.2177126, 0.2170364, 0.2163293, 0.2163152, 0.2149421, 0.2148598, 0.2147223, 0.2142879, 0.2131869, 0.2125999, 0.2122888, 0.2120026, 0.2113961, 0.211241, 0.210954, 0.210405, 0.2102284, 0.2102138, 0.2101416, 0.2100962, 0.2097508, 0.209165, 0.2090621, 0.2088262, 0.2086024, 0.2083197, 0.2080851, 0.207586, 0.2073349, 0.2057874, 0.2052619, 0.2047285, 0.2046076, 0.2036157, 0.2034487, 0.2031037, 0.2022743, 0.2019432, 0.2018259, 0.2017073, 0.2015941, 0.2012414, 0.2004321, 0.19996, 0.1996112, 0.1994005, 0.198269, 0.1976466, 0.1976415, 0.1974073, 0.1965485, 0.1963238, 0.1961059, 0.1947243, 0.1946635, 0.1943505, 0.1939756, 0.1939598, 0.1936484, 0.1936286, 0.1935699, 0.1932412, 0.1928713, 0.1919249, 0.1916637, 0.1910558, 0.1905205, 0.1903602, 0.189957, 0.1894668, 0.188203, 0.1879801, 0.1858274, 0.1857864, 0.1857214, 0.1845394, 0.1845299, 0.183014, 0.1828568, 0.1825895, 0.1823505, 0.1822146, 0.1805752, 0.1800698, 0.1781023, 0.177815, 0.176641, 0.1762979, 0.1735039, 0.1723369, 0.17189, 0.1715915, 0.1705153, 0.1703553, 0.1698795, 0.1693564, 0.1688228, 0.1678632, 0.1673151, 0.1670377, 0.1663555, 0.1660107, 0.1657888, 0.1655413, 0.1653176, 0.1637089, 0.1628536, 0.1628198, 0.162111, 0.161965, 0.1610914, 0.1610799, 0.1600385, 0.1600133, 0.1598718, 0.1591489, 0.1588312, 0.1586608, 0.1578006, 0.1576878, 0.1576036, 0.156491, 0.1561022, 0.155835, 0.1547999, 0.1537383, 0.1533414, 0.1523911, 0.1518615, 0.1515645, 0.1511111, 0.1503525, 0.1492119, 0.1491643, 0.1490154, 0.14889, 0.1484894, 0.1483561, 0.147317, 0.147042, 0.1469573, 0.1457838, 0.1456804, 0.1456318, 0.1451934, 0.1450306, 0.1449807, 0.1448179, 0.1447681, 0.143157, 0.1417988, 0.1409779, 0.1404908, 0.1404763, 0.1398547, 0.1396971, 0.1389494, 0.1388239, 0.13866, 0.1386316, 0.1381046, 0.1379434, 0.1379274, 0.137333, 0.136943, 0.1366251, 0.1353154, 0.1334858, 0.1333125, 0.1330747, 0.1328814, 0.1319628, 0.1314134, 0.1310277, 0.1309192, 0.1308781, 0.1308271, 0.1306404, 0.1302922, 0.1298199, 0.1297833, 0.1297697, 0.1296267, 0.1296081, 0.1293941, 0.1287681, 0.1286273, 0.1284541, 0.1280603, 0.127903, 0.1278413, 0.1263906, 0.1249021, 0.1247733, 0.1238494, 0.1237771, 0.1231897, 0.1230392, 0.1227755, 0.1226008, 0.122353, 0.1222199, 0.1219041, 0.1217967, 0.1212613, 0.1210055, 0.1202554, 0.1201037, 0.1199677, 0.1192108, 0.1190766, 0.1189516, 0.1186868, 0.1184612, 0.1180799, 0.1171056, 0.1162147, 0.1160921, 0.1160556, 0.1153013, 0.1149611, 0.114643, 0.1142811, 0.1139901, 0.1132495, 0.1123684, 0.1122529, 0.1118144, 0.1116564, 0.1114169, 0.1105629, 0.1098452, 0.1094049, 0.1086315, 0.1084303, 0.1079379, 0.1075403, 0.1074806, 0.1063842, 0.1056832, 0.1056721, 0.104966, 0.1044132, 0.1042873, 0.1041701, 0.1035701, 0.103012, 0.1028516, 0.1026064, 0.1022848, 0.1020695, 0.1014827, 0.1013248, 0.1001791, 0.1001002, 0.0998439, 0.0995541, 0.0992742, 0.0979518, 0.0971047, 0.0968231, 0.0964532, 0.0959943, 0.095668, 0.0952495, 0.0947176, 0.0936704, 0.0934813, 0.0933449, 0.0926112, 0.0923886, 0.0918465, 0.0918418, 0.0917909, 0.0917277, 0.0915579, 0.0912674, 0.0903104, 0.0902453, 0.0897659, 0.0896537, 0.0894728, 0.0889524, 0.088486, 0.0883947, 0.088342, 0.0877271, 0.0875207, 0.0872065, 0.0871464, 0.0870241, 0.0869394, 0.0863483, 0.0857032, 0.0856117, 0.0851817, 0.0851609, 0.085032, 0.0844686, 0.0837236, 0.0830884, 0.0830592, 0.0826771, 0.0822731, 0.0795474, 0.0791547, 0.0779782, 0.077868, 0.0772922, 0.07708, 0.0755305, 0.07414, 0.07357, 0.0729773, 0.0724995, 0.0719431, 0.0717517, 0.0717297, 0.0715896, 0.0702764, 0.069939, 0.0695556, 0.0693338, 0.0689044, 0.0686663, 0.0685278, 0.0685203, 0.0684711, 0.0682737, 0.0682089, 0.0672639, 0.066818, 0.0667997, 0.0667382, 0.065909, 0.0656942, 0.0655845, 0.0654692, 0.0653107, 0.0650576, 0.0642313, 0.0636972, 0.0634756, 0.0634671, 0.0625542, 0.062369, 0.06193, 0.061735, 0.061734, 0.0614023, 0.0612424, 0.061158, 0.0606677, 0.0606026, 0.0601225, 0.0599826, 0.0598721, 0.0593741, 0.059099, 0.0590824, 0.0589262, 0.058836, 0.0586673, 0.0582652, 0.0582476, 0.0581126, 0.0575821, 0.0574339, 0.0573752, 0.0573288, 0.0572818, 0.0568204, 0.0565599, 0.0563753, 0.0562298, 0.0557546, 0.0556596, 0.0556077, 0.0556025, 0.0550221, 0.054976, 0.0543528, 0.0541676, 0.0540623, 0.0535632, 0.0535066, 0.0532117, 0.0522233, 0.0521769, 0.0520239, 0.0518123, 0.0516747, 0.0513349, 0.0511091, 0.0510823, 0.0510475, 0.050432, 0.0501478, 0.0499764, 0.0497624, 0.0497067, 0.0496861, 0.0491639, 0.049031, 0.0488833, 0.0486551, 0.0485894, 0.0484905, 0.0484498, 0.0482721, 0.0481863, 0.0475615, 0.0475329, 0.0474384, 0.0473826, 0.0473453, 0.0472943, 0.0472811, 0.0470629, 0.0469878, 0.0464681, 0.0463473, 0.0462853, 0.0462719, 0.0458172, 0.0456098, 0.0454529, 0.0451537, 0.0449107, 0.0448456, 0.0448029, 0.0447203, 0.0446106, 0.0441349, 0.0440817, 0.0440651, 0.0440186, 0.0439191, 0.0439117, 0.0436838, 0.0436486, 0.0435861, 0.0433554, 0.0431915, 0.0431655, 0.043038, 0.0430372, 0.0428721, 0.0428583, 0.0428328, 0.042815, 0.0427126, 0.0426584, 0.0426115, 0.0424076, 0.0422795, 0.0420408, 0.0419285, 0.0417974, 0.0415781, 0.041429, 0.0413178, 0.0410637, 0.040974, 0.0408592, 0.0405586, 0.0404296, 0.0404269, 0.0403155, 0.040252, 0.0400473, 0.039925, 0.0397853, 0.0394141, 0.039187, 0.0391026, 0.0389511, 0.0388254, 0.0384966, 0.0381796, 0.0380919, 0.0379713, 0.0375945, 0.0374536, 0.0373892, 0.0373209, 0.0373178, 0.0372579, 0.037139, 0.0370688, 0.0369655, 0.0368578, 0.036727, 0.0367067, 0.0366866, 0.0366753, 0.0366092, 0.036411, 0.0360177, 0.0359697, 0.0357977, 0.035778, 0.0357536, 0.0355336, 0.0354858, 0.0351841, 0.0350997, 0.035009, 0.0349009, 0.0347935, 0.0346792, 0.0345865, 0.0343878, 0.0343574, 0.0341642, 0.0337846, 0.0337308, 0.0335671, 0.0335213, 0.0333521, 0.0332856, 0.033163, 0.0329945, 0.032927, 0.0328388, 0.0327942, 0.0327855, 0.0326824, 0.0326202, 0.0325119, 0.0323986, 0.0321711, 0.0319926, 0.0317823, 0.0315656, 0.0315439, 0.0312682, 0.0311289, 0.0309985, 0.0308447, 0.0307068, 0.0305653, 0.0305636, 0.0304852, 0.0303322, 0.0300736, 0.0299738, 0.0296309, 0.0294639, 0.0294155, 0.0292511, 0.0291264, 0.0290621, 0.0289132, 0.0288363, 0.0287938, 0.0287735, 0.0283989, 0.028365, 0.0280566, 0.0279717, 0.0278643, 0.0278517, 0.0277412, 0.027731, 0.027705, 0.0276851, 0.0274943, 0.0274829, 0.0273117, 0.0272453, 0.027183, 0.0271802, 0.0271472, 0.0271076, 0.0271036, 0.0270396, 0.0268525, 0.0267207, 0.0265125, 0.0264641, 0.026068, 0.0260002, 0.0258598, 0.0258126, 0.0255571, 0.0254087, 0.0251746, 0.0251666, 0.0249952, 0.0249001, 0.0248534, 0.0248274, 0.024787, 0.0246798, 0.024662, 0.0246017, 0.0245772, 0.0245368, 0.0245172, 0.0245069, 0.0244699, 0.0242051, 0.0240801, 0.0240513, 0.0240456, 0.024012, 0.0239564, 0.0238197, 0.0237676, 0.0235422, 0.0234086, 0.0234076, 0.0234062, 0.0233279, 0.0232632, 0.0231878, 0.0230399, 0.0229501, 0.0227874, 0.0227066, 0.0226623, 0.0226484, 0.0225952, 0.022566, 0.0225635, 0.0225518, 0.022523, 0.0223866, 0.0223856, 0.0223754, 0.0223538, 0.0220989, 0.0220678, 0.0220513, 0.0220304, 0.0219657, 0.0218388, 0.0215666, 0.0215636, 0.0214837, 0.0213363, 0.0212898, 0.0212447, 0.0211686, 0.0211388, 0.0211148, 0.0210465, 0.0208862, 0.0208838, 0.0208577, 0.0207902, 0.0207442, 0.0206656, 0.0205511, 0.0204582, 0.0203726, 0.0203559, 0.0202739, 0.0202443, 0.020195, 0.0201945, 0.0201351, 0.0200945, 0.0200171, 0.0199956, 0.0199473, 0.0198266, 0.0198119, 0.0196854, 0.0194441, 0.0192033, 0.019159, 0.019107, 0.0187783, 0.0187067, 0.0186468, 0.0184144, 0.0183806, 0.0183683, 0.0179885, 0.0179771, 0.0179392, 0.017758, 0.0175578, 0.0174825, 0.0174398, 0.0173827, 0.0173541, 0.0172564, 0.0172256, 0.0172077, 0.0171801, 0.0170086, 0.0169848, 0.01695, 0.016864, 0.0168626, 0.0166607, 0.0165271, 0.0164051, 0.0163944, 0.0163175, 0.0162998, 0.0162944, 0.0162135, 0.0161557, 0.0161337, 0.0159654, 0.0159587, 0.0159068, 0.0159064, 0.0158016, 0.0157528, 0.0157523, 0.0156301, 0.0156142, 0.0156034, 0.0151538, 0.0149288, 0.0149139, 0.0148833, 0.0147678, 0.0147182, 0.0147121, 0.0146089, 0.0144491, 0.0144005, 0.0143674, 0.0142459, 0.0142287, 0.0142286, 0.0141491, 0.0140127, 0.0139275, 0.0139163, 0.0138886, 0.0138531, 0.0138184, 0.0137548, 0.0135301, 0.013461, 0.0133953, 0.0133652, 0.0133088, 0.0133033, 0.0128954, 0.0128405, 0.0127313, 0.0126237, 0.0125896, 0.0125383, 0.0125379, 0.0125112, 0.0124703, 0.0124589, 0.0123585, 0.0123499, 0.0123121, 0.0122881, 0.012104, 0.012044, 0.012042, 0.0119601, 0.0119518, 0.0119081, 0.0118437, 0.0118082, 0.0117071, 0.0116552, 0.0115851, 0.0115618, 0.0115137, 0.0113194, 0.0113086, 0.011277, 0.0112722, 0.011073, 0.0109248, 0.010766, 0.0107164, 0.0106633, 0.0106086, 0.0103607, 0.0102955, 0.0102144, 0.0100968, 0.010077, 0.0100581, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+                                                    ];
+                                                    let yMax = 600;
+                                                    let dataShadow = [];
+                                                    for (let i = 0; i < data.length; i++) {
+                                                        dataShadow.push(yMax);
+                                                    }
+                                                    option = {
+                                                        xAxis: {
+                                                            data: dataAxis,
+                                                            axisLabel: {
+                                                                inside: true,
+                                                                color: '#fff'
+                                                            },
+                                                            axisTick: {
+                                                                show: false
+                                                            },
+                                                            axisLine: {
+                                                                show: false
+                                                            },
+                                                            z: 10
+                                                        },
+                                                        yAxis: {
+                                                            axisLine: {
+                                                                show: false
+                                                            },
+                                                            axisTick: {
+                                                                show: false
+                                                            },
+                                                            axisLabel: {
+                                                                color: '#999'
+                                                            }
+                                                        },
+                                                        dataZoom: [
+                                                            {
+                                                                type: 'inside'
+                                                            }
+                                                        ],
+                                                        series: [
+                                                            {
+                                                                type: 'bar',
+                                                                showBackground: true,
+                                                                itemStyle: {
+                                                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                                                        { offset: 0, color: '#83bff6' },
+                                                                        { offset: 0.5, color: '#188df0' },
+                                                                        { offset: 1, color: '#188df0' }
+                                                                    ])
+                                                                },
+                                                                emphasis: {
+                                                                    itemStyle: {
+                                                                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                                                            { offset: 0, color: '#2378f7' },
+                                                                            { offset: 0.7, color: '#2378f7' },
+                                                                            { offset: 1, color: '#83bff6' }
+                                                                        ])
+                                                                    }
+                                                                },
+                                                                data: data
+                                                            }
+                                                        ]
+                                                    };
+                                                    // Enable data zoom when user click bar.
+                                                    const zoomSize = 6;
+                                                    myChart.on('click', function (params) {
+                                                        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+                                                        myChart.dispatchAction({
+                                                            type: 'dataZoom',
+                                                            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+                                                            endValue:
+                                                                dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+                                                        });
+                                                    });
+
+                                                    if (option && typeof option === 'object') {
+                                                        myChart.setOption(option);
+                                                    }
+
+                                                    window.addEventListener('resize', myChart.resize);
+                                                </script>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                        <!-- News Row -->
+                        <div class="row">
+
+                            <div class="col-lg-12">
+
+                                <!-- Basic Card Example -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">ESG News</h6>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <span class="news-item-category">🟥 </span>
+                                            <a class="news-item-title" href="https://www.bloomberg.com/news/articles/2022-11-07/ukraine-wields-wartime-powers-to-seize-firms-tied-to-oligarchs?srnd=premium-europe">
+                                                Ukraine Wields Wartime Powers to Seize Oligarch-Backed Firms
+                                            </a>
+                                            <span class="float-right">3 minutes ago</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="news-item-category">⬛️ </span>
+                                            <a class="news-item-title" href="https://www.bloomberg.com/news/articles/2022-11-06/risk-tone-sours-dollar-rises-on-china-covid-zero-markets-wrap?srnd=premium-europe">
+                                                Stocks Rally for Second Day Ahead of US Midterms: Markets Wrap
+                                            </a>
+                                            <span class="float-right">28 minutes</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="news-item-category">🟥 </span>
+                                            <a class="news-item-title" href="https://www.bloomberg.com/news/articles/2022-11-07/musk-s-twitter-enters-week-2-with-reversals-on-check-marks-jobs?srnd=premium-europe">
+                                                Elon Musk Walks Back on Twitter Job Cuts, Blue Checks in Second Week
+                                            </a>
+                                            <span class="float-right">2 hours ago</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Alpenda 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
