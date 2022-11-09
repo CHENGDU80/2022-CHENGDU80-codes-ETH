@@ -3,21 +3,21 @@ from sklearn.linear_model import Lasso
 from sklearn.metrics import roc_auc_score, plot_roc_curve
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
-from preprocess import train_prep_avg, eval_prep_avg
+from preprocess import train_prep_pca, eval_prep_pca
 from util import *
 import pickle
 import time
 import argparse
 from model import load_model
 
-def save_model_avg(model, features, save_name = ''):
-    new_dict = {'model': model, 'features': features}
+def save_model_pca(model, features, pca_g0, pca_gl0, pca_int, save_name = ''):
+    new_dict = {'model': model, 'features': features, 'pca_g0': pca_g0, 'pca_gl0':pca_gl0, 'pca_int':pca_int}
     filename = 'model/model_'+ save_name + str(int(time.time()))+'.pkl'
     pickle.dump(new_dict, open(filename, 'wb'))
 
-def train_avg(model, fs_method, fs_model, save_name = '', over_sample = False, fs = 1):
+def train_pca(model, fs_method, fs_model, save_name = '', over_sample = False, fs = 1):
     # pipeline
-    X_train, Y_train = train_prep_avg()
+    X_train, Y_train, pca_g0, pca_gl0, pca_int = train_prep_pca()
     print('training data preprocessed')
     features, X_train_select = FeatureSelection(X_train, Y_train, fs_model, fs_method)
     print('selected features', features)
@@ -33,16 +33,19 @@ def train_avg(model, fs_method, fs_model, save_name = '', over_sample = False, f
     model.fit(X, Y['DEFAULT_LABEL'])
     train_score = model.predict_proba(X_train_select)
     print('train auc', roc_auc_score(Y_train['DEFAULT_LABEL'], train_score[:, 1]))
-    save_model_avg(model, features, save_name)
+    save_model_pca(model, features, pca_g0, pca_gl0, pca_int, save_name)
     plot_roc_curve(model, X_train_select, Y_train['DEFAULT_LABEL'])
     return features, model
 
-def evaluate_avg(filename):
+def evaluate_pca(filename):
     loaded_model = load_model('model/'+filename + '.pkl')
     model = loaded_model['model']
     features = loaded_model['features']
+    pca_g0 = loaded_model['pca_g0']
+    pca_gl0 = loaded_model['pca_gl0']
+    pca_int = loaded_model['pca_int']
 
-    X_test, Y_test = eval_prep_avg()
+    X_test, Y_test = eval_prep_pca(pca_g0, pca_gl0, pca_int)
     X_test_select = X_test[features]
     test_score = model.predict_proba(X_test_select)
     print('eval auc', roc_auc_score(Y_test['DEFAULT_LABEL'], test_score[:, 1]))
@@ -52,7 +55,7 @@ def evaluate_avg(filename):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--stage', default='evaluate', help='train, evaluate, test')
-    parser.add_argument('--model_name', default='avg_gb_brf', help='some packaged model name')
+    parser.add_argument('--model_name', default='pca_gb_brf', help='some packaged model name')
     parser.add_argument('--modelfile_name', default=None, help='the name of the model file')
 
 
@@ -61,7 +64,7 @@ if __name__ == '__main__':
 
     ############## training stage ###############
     if args.stage == 'train':
-        if args.model_name == 'avg_brf_lasso':
+        if args.model_name == 'pca_brf_lasso':
             # scaling ('quantile', 'standard')
             scaling = 'quantile'
             # na filling method (-10.0 -500.0 'mean' 0)
@@ -77,7 +80,7 @@ if __name__ == '__main__':
             
             
             
-        if args.model_name == 'avg_brf_brf':
+        if args.model_name == 'pca_brf_brf':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -90,7 +93,7 @@ if __name__ == '__main__':
             fs_method = 'rf'
             fs_model = BalancedRandomForestClassifier(n_estimators=100, random_state = 0, bootstrap = False, max_samples = 10000)
 
-        if args.model_name == 'avg_gb_brf':
+        if args.model_name == 'pca_gb_brf':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -103,7 +106,7 @@ if __name__ == '__main__':
             fs_method = 'rf'
             fs_model = BalancedRandomForestClassifier(n_estimators=100, random_state = 0, bootstrap = False, max_samples = 10000)
 
-        if args.model_name == 'avg_gb_brf_2':
+        if args.model_name == 'pca_gb_brf_2':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -118,12 +121,12 @@ if __name__ == '__main__':
             
 
 
-        train_avg(model, fs_method, fs_model, args.model_name, over_sample, fs)
+        train_pca(model, fs_method, fs_model, args.model_name, over_sample, fs)
 
 
     ################# evaluation stage #################
     if args.stage == 'evaluate':
-        evaluate_avg(args.modelfile_name)
+        evaluate_pca(args.modelfile_name)
 
     # ################# test stage #####################
     # if args.stage == 'test':
