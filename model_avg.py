@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     ############## training stage ###############
     if args.stage == 'train':
-        if args.model_name == 'brf_lasso':
+        if args.model_name == 'avg_brf_lasso':
             # scaling ('quantile', 'standard')
             scaling = 'quantile'
             # na filling method (-10.0 -500.0 'mean' 0)
@@ -77,7 +77,7 @@ if __name__ == '__main__':
             
             
             
-        if args.model_name == 'brf_brf':
+        if args.model_name == 'avg_brf_brf':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -90,7 +90,7 @@ if __name__ == '__main__':
             fs_method = 'rf'
             fs_model = BalancedRandomForestClassifier(n_estimators=100, random_state = 0, bootstrap = False, max_samples = 10000)
 
-        if args.model_name == 'gb_brf':
+        if args.model_name == 'avg_gb_brf':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -103,7 +103,7 @@ if __name__ == '__main__':
             fs_method = 'rf'
             fs_model = BalancedRandomForestClassifier(n_estimators=100, random_state = 0, bootstrap = False, max_samples = 10000)
 
-        if args.model_name == 'gb_brf_2':
+        if args.model_name == 'avg_gb_brf_2':
             # scaling
             scaling = 'standard'
             # na filling method
@@ -123,8 +123,8 @@ if __name__ == '__main__':
 
     ################# evaluation stage #################
     if args.stage == 'evaluate':
-        evaluate(args.modelfile_name)
+        evaluate_avg(args.modelfile_name)
 
-    ################# test stage #####################
-    if args.stage == 'test':
-        test(args.modelfile_name)
+    # ################# test stage #####################
+    # if args.stage == 'test':
+    #     test(args.modelfile_name)

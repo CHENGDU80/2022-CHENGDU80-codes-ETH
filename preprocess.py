@@ -38,15 +38,16 @@ def test_prep(std_scaler, fillna_m):
 
 def avg_combine(X):
     feature_dict = pickle.load(open('feature_columns.pkl', 'rb'))
+    X_int = X[feature_dict['int_feature']]
+    X_int = X_int.fillna(-1)
+
+    X = X.fillna(X.mean())
     X_avg_g0 = avg_data(X[feature_dict['float_g0']])
     X_avg_gl0 = avg_data(X[feature_dict['float_gl0']])
     X_avg_g0.columns = ['g0_'+col for col in X_avg_g0.columns]
     X_avg_gl0.columns = ['gl0_'+col for col in X_avg_gl0.columns]
-
     X_float_l0 = X[feature_dict['float_l0']]
-    X_int = X[feature_dict['int_feature']]
-    X_int = X_int.fillna(-1)
-
+    
     X_new = pd.concat([X_avg_g0, X_avg_gl0, X_float_l0, X_int], axis = 1)
     X_new['na_rate'] = X['na_rate']
     return X_new
